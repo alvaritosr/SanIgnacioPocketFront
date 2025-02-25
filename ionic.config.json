@@ -1,0 +1,7 @@
+{
+  "name": "$SanIgnacioPocketFront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
