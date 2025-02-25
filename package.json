@@ -1,11 +1,11 @@
 {
-  "name": "san-ignacio-pocket-front",
+  "name": "San Ignacio Pocket",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config src/proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
