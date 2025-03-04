@@ -11,8 +11,8 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'sobres',
-    loadComponent: () => import('./sobres/sobres.component').then((m) => m.SobresComponent),
+    path: 'estampitas',
+    loadComponent: () => import('./estampitas/estampitas.component').then((m) => m.EstampitasComponent),
   },
   {
     path: 'puntuaciones',

@@ -1,5 +1,11 @@
+ion-toolbar
+{
+  --background: white;
+  --color: black;
+}
+
 ion-content {
-  --background: blue;
+  --background: #006b9b;
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -31,7 +37,7 @@ ion-img {
 }
 
 ion-button {
-  --background: blue;
+  --background: #006b9b;
   color: white;
   border: none;
   padding: 10px 20px;

@@ -1,5 +1,12 @@
-ion-content {
-  --background: blue;
+ion-toolbar
+{
+  --background: white;
+  --color: black;
+}
+
+ion-content
+{
+  --background: #006b9b;
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -9,7 +16,8 @@ ion-content {
   align-items: center;
 }
 
-ion-card {
+ion-card
+{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,15 +31,17 @@ ion-card {
   margin-left: 38%;
 }
 
-ion-img {
+ion-img
+{
   width: 300px;
   height: auto;
   margin: 20px auto;
   display: block;
 }
 
-ion-button {
-  --background: blue;
+ion-button
+{
+  --background: #006b9b;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -40,11 +50,13 @@ ion-button {
   border-radius: 5px;
 }
 
-ion-button:hover {
+ion-button:hover
+{
   --background: lightgray;
 }
 
-ion-title {
+ion-title
+{
   margin: 1%;
   font-size: 3rem;
   font-weight: bold;

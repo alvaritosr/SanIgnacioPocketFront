@@ -1,0 +1,39 @@
+ion-toolbar
+{
+  --background: white;
+  --color: black;
+}
+
+ion-title
+{
+  margin: 1%;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-list
+{
+  --background: #006b9b;
+  --color: white;
+}
+
+ion-item
+{
+  --background: #006b9b;
+  --color: white;
+}
+
+ion-label
+{
+  --background: #006b9b;
+  --color: white;
+  margin: 1%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+ion-content
+{
+  --background: #006b9b;
+}

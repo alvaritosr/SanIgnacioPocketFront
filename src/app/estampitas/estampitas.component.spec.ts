@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SobresComponent } from './sobres.component';
+import { SobresComponent } from './estampitas.component';
 
 describe('SobresComponent', () => {
   let component: SobresComponent;

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>SEMANA IGNACIANA</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="!gameOver && !hasWon">
+  <p>Puntuación: {{ score }}</p>
+  <ion-card *ngIf="estampitas.length > 0">
+    <ion-card-content>
+      <ion-img [src]="estampitas[currentIndex]?.imagen" alt="Imagen de la estampita"></ion-img>
+      <p>¿Quién es este santo?</p>
+      <ion-button
+        *ngFor="let option of currentOptions"
+        [disabled]="disabledButtons.has(option)"
+        (click)="selectAnswer(option)">
+        {{ option }}
+      </ion-button>
+      <p *ngIf="correctAnswer" style="color: green;">¡Respuesta correcta!</p>
+      <p *ngIf="!correctAnswer && disabledButtons.size > 0" style="color: red;">Respuesta incorrecta, intenta de nuevo.</p>
+    </ion-card-content>
+  </ion-card>
+  <p>Tiempo restante: {{ timer }} segundos</p>
+</ion-content>
+<ion-content *ngIf="gameOver || hasWon" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <h1>{{ gameOver ? 'Game Over' : '¡Has Ganado!' }}</h1>
+  <p>Puntuación final: {{ score }}</p>
+</ion-content>
+
+
