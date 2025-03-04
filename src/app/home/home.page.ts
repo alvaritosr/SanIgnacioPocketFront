@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import {Router, RouterLink} from '@angular/router';
+import {IonicModule} from "@ionic/angular";
 
-@Component({
+@Component
+({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [
+    RouterLink,
+    IonicModule
+  ],
+  standalone: true
 })
-export class HomePage {
-  constructor() {}
+
+export class HomePage implements OnInit
+{
+  constructor(private router: Router) { }
+
+  ngOnInit() { }
+
+  aJugar()
+  {
+    this.router.navigate(['/sobres']);
+  }
 }
