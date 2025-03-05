@@ -10,10 +10,10 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let puntuacion of puntuaciones; let i = index">
-      <ion-label>
+      <ion-label class="nombre-label">
         {{ i + 1 }}. {{ puntuacion.nombre }}
       </ion-label>
-      <ion-label slot="end">
+      <ion-label class="puntos-label" slot="end">
         {{ puntuacion.pts }} PTS
       </ion-label>
     </ion-item>

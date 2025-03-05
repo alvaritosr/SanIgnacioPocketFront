@@ -7,7 +7,7 @@ ion-toolbar
 ion-title
 {
   margin: 1%;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
 }
@@ -16,24 +16,60 @@ ion-list
 {
   --background: #006b9b;
   --color: white;
+  padding: 10px;
 }
 
 ion-item
 {
   --background: #006b9b;
   --color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-ion-label
+.nombre-label
 {
-  --background: #006b9b;
-  --color: white;
-  margin: 1%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  flex: 1;
+}
+
+.puntos-label
+{
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: right;
 }
 
 ion-content
 {
   --background: #006b9b;
+}
+
+@media (max-width: 768px)
+{
+  ion-title
+  {
+    font-size: 2rem;
+  }
+
+  .nombre-label, .puntos-label
+  {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px)
+{
+  ion-title
+  {
+    font-size: 1.5rem;
+  }
+
+  .nombre-label, .puntos-label
+  {
+    font-size: 0.9rem;
+  }
 }

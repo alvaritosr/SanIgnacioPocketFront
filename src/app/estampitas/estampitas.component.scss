@@ -1,58 +1,142 @@
 ion-toolbar
 {
-  --background: white;
-  --color: black;
+ --background: white;
+ --color: black;
 }
 
-ion-content {
+ion-content
+{
   --background: #006b9b;
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
   padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-ion-card {
+.estampitas
+{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: white;
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 10px;
-  max-width: 25%;
+  max-width: 80%;
   margin-top: 2%;
-  margin-left: 38%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s;
 }
 
-ion-img {
-  width: 300px;
+.sobres-container
+{
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px)
+{
+  .sobres-container
+  {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .estampitas
+  {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 1023px)
+{
+  .sobres-container
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .estampitas
+  {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 600px)
+{
+  .sobres-container
+  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .estampitas
+  {
+    max-width: 90%;
+  }
+}
+
+.abriendo
+{
+  animation: abrirSobre 1s forwards;
+}
+
+@keyframes abrirSobre
+{
+  0%
+  {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+ion-img
+{
+  width: 100%;
+  max-width: 300px;
   height: auto;
   margin: 20px auto;
   display: block;
 }
 
-ion-button {
+ion-button
+{
   --background: #006b9b;
   color: white;
-  border: none;
-  padding: 10px 20px;
   font-size: 18px;
-  cursor: pointer;
   border-radius: 5px;
 }
 
-ion-button:hover {
-  --background: lightgray;
+.correcto
+{
+  color: green;
 }
 
-ion-title {
-  margin: 1%;
-  font-size: 3rem;
+.incorrecto
+{
+  color: red;
+}
+
+.ganado
+{
+  color: green;
+}
+
+.perdido
+{
+  color: red;
+}
+
+ion-title
+{
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
 }

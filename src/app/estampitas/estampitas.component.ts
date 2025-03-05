@@ -20,6 +20,10 @@ import {PuntuacionesService} from "../services/puntuaciones.service";
 
 export class EstampitasComponent implements OnInit
 {
+  sobreAbierto: boolean = false;
+  animandoSobre: boolean = false;
+  sobreAnimandoIndex: number | null = null;
+  todosOcultos: boolean = false;
   estampitas: Estampitas[] = [];
   currentIndex: number = 0;
   correctAnswer: boolean = false;
@@ -42,7 +46,6 @@ export class EstampitasComponent implements OnInit
     {
       this.estampitas = data;
       this.setOptions();
-      this.startTimer();
     });
   }
 
@@ -168,4 +171,19 @@ export class EstampitasComponent implements OnInit
       });
     }
   }
+
+  abrirSobre(index: number)
+  {
+    this.sobreAnimandoIndex = index;
+
+    setTimeout(() =>
+    {
+      this.sobreAbierto = true;
+      this.sobreAnimandoIndex = null;
+      this.todosOcultos = true;
+    }, 1000);
+
+    this.startTimer();
+  }
+
 }

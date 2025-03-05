@@ -8,7 +8,22 @@
 </ion-header>
 <ion-content *ngIf="!gameOver && !hasWon">
   <p>Puntuación: {{ score }}</p>
-  <ion-card *ngIf="estampitas.length > 0">
+
+  <ng-container *ngIf="!todosOcultos">
+    <div class="sobres-container">
+      <ion-card *ngFor="let sobre of [0,1,2,3]; let i = index"
+                (click)="abrirSobre(i)"
+                [class.abriendo]="sobreAnimandoIndex === i"
+                id="sobres">
+        <ion-card-content>
+          <ion-img src="assets/sobreSafa.png" alt="Sobre cerrado"></ion-img>
+          <p>Toca para abrir el sobre</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ng-container>
+
+  <ion-card *ngIf="sobreAbierto && estampitas.length > 0" class="estampitas">
     <ion-card-content>
       <ion-img [src]="estampitas[currentIndex]?.imagen" alt="Imagen de la estampita"></ion-img>
       <p>¿Quién es este santo?</p>
@@ -24,9 +39,23 @@
   </ion-card>
   <p>Tiempo restante: {{ timer }} segundos</p>
 </ion-content>
-<ion-content *ngIf="gameOver || hasWon" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <h1>{{ gameOver ? 'Game Over' : '¡Has Ganado!' }}</h1>
-  <p>Puntuación final: {{ score }}</p>
+<ion-content *ngIf="gameOver || hasWon">
+  <ion-card *ngIf="hasWon">
+    <ion-card-content>
+      <h2 style="color: green;">¡Has ganado!</h2>
+      <p>Felicidades, {{ playerName }}. Has completado el juego con {{ score }} puntos.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="gameOver && !hasWon">
+    <ion-card-content>
+      <h2 style="color: red;">¡Has perdido!</h2>
+      <p>Se acabó el tiempo, {{ playerName }}. Tu puntuación final es {{ score }}.</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+
+
 
 
