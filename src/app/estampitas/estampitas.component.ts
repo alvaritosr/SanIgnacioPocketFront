@@ -120,8 +120,8 @@ export class EstampitasComponent implements OnInit
   nextQuestion() {
     if (this.currentIndex < this.estampitas.length - 1) {
       this.currentIndex++;
-      this.correctAnswer = false; // Restablecer a false
-      this.answerSelected = false; // Restablecer a false
+      this.correctAnswer = false; // Reset to false
+      this.answerSelected = false; // Reset to false
     }
   }
 

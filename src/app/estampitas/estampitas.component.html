@@ -34,7 +34,7 @@
         {{ option }}
       </ion-button>
       <p *ngIf="correctAnswer" style="color: green;">¡Respuesta correcta!</p>
-      <p *ngIf="!correctAnswer && disabledButtons.size > 0" style="color: red;">Respuesta incorrecta, intenta de nuevo.</p>
+      <p *ngIf="!correctAnswer && answerSelected" style="color: red;">Respuesta incorrecta, intenta de nuevo.</p>
     </ion-card-content>
   </ion-card>
   <p>Tiempo restante: {{ timer }} segundos</p>
