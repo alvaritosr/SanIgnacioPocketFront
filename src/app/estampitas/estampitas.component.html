@@ -25,7 +25,7 @@
 
   <ion-card *ngIf="sobreAbierto && estampitas.length > 0" class="estampitas">
     <ion-card-content>
-      <ion-img [src]="estampitas[0]?.imagen" alt="Imagen de la estampita"></ion-img>
+      <ion-img [src]="estampitas[0].imagen" alt="Imagen de la estampita"></ion-img>
       <p>¿Quién es este santo?</p>
       <ion-button
         *ngFor="let option of currentOptions"
