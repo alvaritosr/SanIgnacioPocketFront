@@ -35,6 +35,7 @@ export class EstampitasComponent implements OnInit
   hasWon: boolean = false;
   score: number = 0;
   playerName: string = '';
+  answerSelected: boolean = false;
 
   constructor(private puntuacionesService: PuntuacionesService, private estampitasService: EstampitasService, private alertController: AlertController) {}
 
@@ -94,26 +95,22 @@ export class EstampitasComponent implements OnInit
     return array;
   }
 
-  selectAnswer(answer: string)
-  {
+  selectAnswer(answer: string) {
     const correctSanto = this.estampitas[this.currentIndex]?.nombre;
 
-    if (answer === correctSanto)
-    {
+    if (answer === correctSanto) {
       this.correctAnswer = true;
       this.disabledButtons.add(answer);
       this.score += 25;
       setTimeout(() => this.nextQuestion(), 500);
-    }
-
-    else
-    {
+    } else {
       this.correctAnswer = false;
       this.score -= 5;
     }
 
-    if (this.currentIndex === this.estampitas.length - 1 && this.correctAnswer)
-    {
+    this.answerSelected = true;
+
+    if (this.currentIndex === this.estampitas.length - 1 && this.correctAnswer) {
       this.hasWon = true;
       this.stopTimer();
       this.saveScore();
@@ -123,7 +120,8 @@ export class EstampitasComponent implements OnInit
   nextQuestion() {
     if (this.currentIndex < this.estampitas.length - 1) {
       this.currentIndex++;
-      this.correctAnswer = null; // Cambiar a null en lugar de false
+      this.correctAnswer = false; // Restablecer a false
+      this.answerSelected = false; // Restablecer a false
     }
   }
 
