@@ -7,7 +7,7 @@ import { Estampitas } from '../model/estampitas';
   providedIn: 'root'
 })
 export class EstampitasService {
-  private apiUrl = 'https://sanignaciopocketback.onrender.com/api/estampitas/';
+  private apiUrl = 'https://sanignaciopocketback.onrender.com/estampitas/';
 
   constructor(private http: HttpClient) { }
 
