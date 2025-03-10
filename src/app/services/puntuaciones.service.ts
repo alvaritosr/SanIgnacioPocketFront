@@ -3,22 +3,19 @@ import { Observable } from 'rxjs';
 import { Puntuaciones } from '../model/puntuaciones';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable
-({
+@Injectable({
   providedIn: 'root'
 })
+export class PuntuacionesService {
+  private apiUrl = 'https://sanignaciopocket.onrender.com/api/puntuaciones/';
 
-export class PuntuacionesService
-{
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Puntuaciones[]>
-  {
-    return this.http.get<Puntuaciones[]>(`api/puntuaciones/`);
+  getAll(): Observable<Puntuaciones[]> {
+    return this.http.get<Puntuaciones[]>(this.apiUrl);
   }
 
-  guardar(puntuaciones: Puntuaciones): Observable<Puntuaciones>
-  {
-    return this.http.post<Puntuaciones>(`api/puntuaciones/guardar`, puntuaciones);
+  guardar(puntuaciones: Puntuaciones): Observable<Puntuaciones> {
+    return this.http.post<Puntuaciones>(`${this.apiUrl}guardar`, puntuaciones);
   }
 }
