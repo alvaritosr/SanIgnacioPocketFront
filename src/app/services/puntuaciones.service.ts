@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PuntuacionesService {
-  private apiUrl = 'https://sanignaciopocket.onrender.com/api/puntuaciones/';
+  private apiUrl = 'https://sanignaciopocketback.onrender.com/api/puntuaciones/';
 
   constructor(private http: HttpClient) { }
 
