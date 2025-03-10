@@ -120,12 +120,10 @@ export class EstampitasComponent implements OnInit
     }
   }
 
-  nextQuestion()
-  {
-    if (this.currentIndex < this.estampitas.length - 1)
-    {
+  nextQuestion() {
+    if (this.currentIndex < this.estampitas.length - 1) {
       this.currentIndex++;
-      this.correctAnswer = false;
+      this.correctAnswer = null; // Cambiar a null en lugar de false
     }
   }
 
